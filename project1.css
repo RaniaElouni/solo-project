@@ -1,0 +1,51 @@
+#slider{
+	width: 720px;
+	hight: 400px;
+	overflow: hidden;
+	position: relative;
+	left: 350px;
+	top: 100px;
+	border: 1px solid white;
+	
+	
+}
+#slider .slides{
+
+	width: 6000px;
+	height: 400px;
+	margin: 0;
+	padding: 0;
+	
+}
+#slider .slide{
+	float: left;
+	list-style-type: none;
+	width: 720px;
+	height: 400px;
+
+}
+.container{
+	
+
+	height: 900px;
+}
+h1{
+	color: black;
+	position: relative;
+	top: 20px;
+	text-align: center;
+}
+p{
+    color: black;
+	position: relative;
+	top: 40px;
+	text-align: center;
+}
+
+#o{
+	font-family: arial;
+	position: relative;
+ top: 150px;
+ color: black;
+
+}

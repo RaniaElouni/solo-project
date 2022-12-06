@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<link rel="stylesheet" href="project1.css">
+</head>
+<body>
+	<div class="container">
+		<div class="header">
+			<h1 class="text-muted"> 5 Scary movies that should not be missed out by horror lovers</h1>
+			<p>So turn off the lights, grab your blanket and get ready to scared out of your wits with these spine chilling movies.
+            </p>
+		</div>
+		<div id="slider">
+			<ul class="slides">
+				<li class="slide"><img src="https://image.forskning.no/1451841.jpg?imageId=1451841&panow=0&panoh=0&panox=0&panoy=0&heightw=0&heighth=0&heightx=0&heighty=0&width=1200&height=675" ></li>
+				<li class="slide"><img src="https://www.spectatornews.com/wp-content/uploads/2019/04/Us-movie-theory_ANGELL-900x474.jpg"></li>
+				<li class="slide"><img src="https://c4.wallpaperflare.com/wallpaper/296/908/866/aliens-alien-movie-sigourney-weaver-ellen-ripley-wallpaper-preview.jpg" ></li>
+				<li class="slide"><img src="./1.jpg"></li>
+				<li class="slide"><img src="https://static1.cbrimages.com/wordpress/wp-content/uploads/2021/06/194tvn6u6kw0gjpg.0.0.jpg?q=50&fit=crop&w=750&dpr=1.5" ></li>
+			</ul>
+
+			
+		</div>
+		<div id="o">
+			<ol>
+			<li> <strong>Clown :</strong> <br>Clown is a 2016 American supernatural horror film directed by Jon Watts, produced by Mac Cappuccino, Eli Roth, and Cody Ryder, and written by Watts and Christopher Ford. It stars Eli Roth, Laura Allen, Andy Powers, and Peter Stormare. Visual effects for the clown monster were done by Jagdeep Khoza, Alterian, Inc., and Tony Gardner. Principal photography began in November 2012, in Ottawa. The film was released in Italy on November 13, 2014,in the UK on March 2, 2015, and in the United States on June 17, 2016, by Dimension Films. The film received mixed reviews from critics.
+			</li>		
+			<li> <strong>Us :</strong> <br>Us is a 2019 American psychological horror film written and directed by Jordan Peele, starring Lupita Nyong'o, Winston Duke, Elisabeth Moss, and Tim Heidecker. The film follows Adelaide Wilson (Nyong'o) and her family, who are attacked by a group of menacing doppelgängers.
+			</li>	
+			<li> <strong>Alien :</strong> <br>Alien is a 1979 science fiction horror film directed by Ridley Scott and written by Dan O'Bannon. Based on a story by O'Bannon and Ronald Shusett, it follows the crew of the commercial space tug Nostromo, who, after coming across a mysterious derelict spaceship on an undiscovered moon, find themselves up against an aggressive and deadly extraterrestrial set loose on the Nostromo. 
+			</li>	
+			<li> <strong>A Quiet Place:</strong> <br>A Quiet Place is a 2018 American post-apocalyptic horror film directed by John Krasinski and written by Bryan Woods, Scott Beck and Krasinski, from a story conceived by Woods and Beck. The plot revolves around a father (Krasinski) and a mother (Emily Blunt) who struggle to survive and rear their children (Millicent Simmonds and Noah Jupe) in a post-apocalyptic world inhabited by blind monsters with an acute sense of hearing.
+			</li>	
+			<li> <strong>Tobe Hooper :</strong> <br>Tobe Hooper directed 1982’s Poltergeist, which was executive produced by one of the best directors alive, Steven Spielberg. The original movie followed a family as they moved into a new home in an empty housing development. They soon begin to experience paranormal activity and discover the presence of a poltergeist in their house.
+			</li>	
+			</ol>
+		</div>
+	</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+	//configuration
+	var width =720;
+	var animationSpeed =1000;
+	var pause = 1000;
+	var currentSlide=1;
+	//catch DOM
+	var $slider = $('#slider');
+	var $slideContainer= $slider.find('.slides');
+	var $slides=$slideContainer.find('.slide');
+    var interval;
+     function startSlider(){
+	interval = setInterval(function(){
+		$slideContainer.animate({'margin-left': '-='+width},animationSpeed,function(){
+			currentSlide++;
+			if(currentSlide===$slides.length){
+				currentSlide = 1 ;
+				$slideContainer.css('margin-left',0);
+			}
+
+		});
+	},pause);
+}
+function pauseSlider(){
+	clearInterval(interval);
+}
+
+$slider.on('mouseenter',pauseSlider).on('mouseleave',startSlider);
+
+
+// startSlider();
+})
+</script>
+</body>
+</html>
